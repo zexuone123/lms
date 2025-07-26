@@ -4,15 +4,15 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AdminLTE v4 | Dashboard</title>
+    <title>AdminLTE v4 | admin</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="AdminLTE v4 | Dashboard" />
+    <meta name="title" content="AdminLTE v4 | admin" />
     <meta name="author" content="ColorlibHQ" />
     <meta name="description"
-        content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS." />
+        content="AdminLTE is a Free Bootstrap 5 Admin admin, 30 example pages using Vanilla JS." />
     <meta name="keywords"
-        content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard" />
+        content="bootstrap 5, bootstrap, bootstrap 5 admin admin, bootstrap 5 admin, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq admin, colorlibhq admin admin" />
     <!--end::Primary Meta Tags-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
     <!--begin::Fonts-->
@@ -28,7 +28,7 @@
         integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI=" crossorigin="anonymous" />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="{{ asset('dashboard/css/adminlte.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/css/adminlte.css') }}" />
     <!--end::Required Plugin(AdminLTE)-->
     <!-- apexcharts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
@@ -44,10 +44,10 @@
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
         <!--begin::Header-->
-        @include('layouts.header')
+        @include('admin.layouts.header')
         <!--end::Header-->
         <!--begin::Sidebar-->
-        @include('layouts.aside')
+        @include('admin.layouts.aside')
         <!--end::Sidebar-->
         <!--begin::App Main-->
         <main class="app-main">
@@ -56,11 +56,11 @@
         <!--end::App Main-->
 
         <!--begin::Sweetalert-->
-        @include('layouts.sweetalert')
+        @include('admin.layouts.sweetalert')
         <!--end::Sweetalert-->
 
         <!--begin::Footer-->
-        @include('layouts.footer')
+        @include('admin.layouts.footer')
         <!--end::Footer-->
     </div>
     <!--end::App Wrapper-->
@@ -77,7 +77,7 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="{{ asset('dashboard/js/adminlte.js') }}"></script>
+    <script src="{{ asset('admin/js/adminlte.js') }}"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
         const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';

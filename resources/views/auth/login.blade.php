@@ -24,10 +24,6 @@
                 <i class="bi bi-door-open-fill me-1"></i> Login
             </button>
         </form>
-        <div class="text-center mt-4">
-            <p class="mb-1">Belum punya akun?</p>
-            <a href="{{ route('register') }}" class="btn btn-outline-primary btn-sm btn-fun">Daftar</a>
-        </div>
     </div>
 </div>
 @endsection

@@ -39,89 +39,19 @@
                             <p>Blog</p>
                         </a>
                     </li>
-                @endCan
+                @endCan --}}
 
                 <li class="nav-header">Fill</li>
 
-                @Can('configuration')
+                @Can('siswa')
                     <li class="nav-item">
-                        <a href="{{ route('configuration.create') }}"
-                            class="nav-link {{ request()->routeIs('configuration.create') ? 'active' : '' }}">
-                            <i class="bi bi-gear"></i>
-                            <p>Configuration</p>
+                        <a href="{{ route('siswa.index') }}"
+                            class="nav-link {{ request()->routeIs('siswa.index') ? 'active' : '' }}">
+                            <i class="bi bi-laptop"></i>
+                            <p>Siswa</p>
                         </a>
                     </li>
                 @endCan
-
-                @Can('slider')
-                    <li class="nav-item">
-                        <a href="{{ route('sliders.index') }}"
-                            class="nav-link {{ request()->routeIs('sliders.index', 'sliders.create', 'sliders.edit') ? 'active' : '' }}">
-                            <i class="bi bi-layout-three-columns"></i>
-                            <p>Slider</p>
-                        </a>
-                    </li>
-                @endCan
-
-                @Can('about')
-                    <li class="nav-item">
-                        <a href="{{ route('abouts.create') }}"
-                            class="nav-link {{ request()->routeIs('abouts.create') ? 'active' : '' }}">
-                            <i class="bi bi-person-lines-fill"></i>
-                            <p>About</p>
-                        </a>
-                    </li>
-                @endCan
-
-                @Can('superiority')
-                    <li class="nav-item">
-                        <a href="{{ route('superioritys.index') }}"
-                            class="nav-link {{ request()->routeIs('superioritys.index', 'superioritys.create', 'superioritys.edit') ? 'active' : '' }}">
-                            <i class="bi bi-star-fill"></i>
-                            <p>Superiority</p>
-                        </a>
-                    </li>
-                @endCan
-
-                @Can('team')
-                    <li class="nav-item">
-                        <a href="{{ route('teams.index') }}"
-                            class="nav-link {{ request()->routeIs('teams.index', 'teams.create', 'teams.edit') ? 'active' : '' }}">
-                            <i class="bi bi-person-badge-fill"></i>
-                            <p>Team</p>
-                        </a>
-                    </li>
-                @endCan
-
-                @Can('service')
-                    <li class="nav-item">
-                        <a href="{{ route('services.index') }}"
-                            class="nav-link {{ request()->routeIs('services.index', 'services.create', 'services.edit') ? 'active' : '' }}">
-                            <i class="bi bi-tools"></i>
-                            <p>Service</p>
-                        </a>
-                    </li>
-                @endCan
-
-                @Can('tenant')
-                    <li class="nav-item">
-                        <a href="{{ route('tenants.index') }}"
-                            class="nav-link {{ request()->routeIs('tenants.index', 'tenants.create', 'tenants.edit') ? 'active' : '' }}">
-                            <i class="bi bi-person"></i>
-                            <p>Tenant</p>
-                        </a>
-                    </li>
-                @endCan
-
-                @Can('paid')
-                    <li class="nav-item">
-                        <a href="{{ route('paids.index') }}"
-                            class="nav-link {{ request()->routeIs('paids.index') ? 'active' : '' }}">
-                            <i class="bi bi-calendar-check text-success"></i>
-                            <p>Payment</p>
-                        </a>
-                    </li>
-                @endCan --}}
 
                 @role('super_admin')
                     <li class="nav-header">User</li>

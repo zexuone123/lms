@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Database\SiswaController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -82,4 +83,9 @@ Route::middleware('auth')->group(function () {
   Route::get('/dashboard', function(){
         return view('dashboard'); // siswa
     });
+
+    Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+    Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+    Route::put('/siswa/{id}', [SiswaController::class, 'update'])->name('siswa.update');
+    Route::delete('/siswa/{id}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
 });

@@ -83,3 +83,36 @@ Route::middleware('auth')->group(function () {
         return view('dashboard'); // siswa
     });
 });
+
+// Halaman utama daftar pelajaran
+Route::get('/belajar-anak', function () {
+    return view('belajar-anak'); 
+});
+
+// Group untuk semua mata pelajaran TK & SD
+Route::prefix('belajar-anak')->group(function () {
+    Route::get('/matematika', function () {
+        return view('belajar-anak.matematika');
+    });
+    Route::get('/bahasa-indonesia', function () {
+        return view('belajar-anak.bahasa');
+    });
+    Route::get('/sains', function () {
+        return view('belajar-anak.sains');
+    });
+    Route::get('/agama', function () {
+        return view('belajar-anak.agama');
+    });
+    Route::get('/literasi', function () {
+        return view('belajar-anak.literasi');
+    });
+    Route::get('/numerasi', function () {
+        return view('belajar-anak.numerasi');
+    });
+    Route::get('/seni', function () {
+        return view('belajar-anak.seni');
+    });
+    Route::get('/jati-diri', function () {
+        return view('belajar-anak.jati-diri');
+    });
+});

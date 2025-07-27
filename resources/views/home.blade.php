@@ -6,7 +6,12 @@
     <div class="container">
         <h1 class="display-4 fw-bold mb-3">Belajar Jadi Menyenangkan!</h1>
         <p class="lead mb-4">Akses ratusan kursus seru untuk anak-anak dengan tampilan penuh warna & animasi.</p>
-        <a href="/courses" class="btn btn-warning btn-lg btn-fun">Mulai Belajar</a>
+        <a href="/courses" class="btn btn-warning btn-lg btn-fun me-2">Mulai Belajar</a>
+<a href="/belajar-anak" class="btn btn-success btn-lg btn-fun tombol-anak">
+    📚 Belajar TK & SD
+</a>
+
+
 
         <img src="https://placehold.co/500x300?text=Ilustrasi+Anak+Belajar" 
              class="img-fluid mt-4 rounded animate__animated animate__zoomIn" alt="Ilustrasi">

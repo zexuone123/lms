@@ -83,6 +83,24 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(120vw); }
         }
+        .tombol-anak {
+    background: linear-gradient(45deg, #34d399, #10b981);
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tombol-anak:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    animation: pulse 0.8s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
     </style>
     <script>
     function confirmLogout() {

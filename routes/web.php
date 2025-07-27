@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Database\SiswaController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -33,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
     // Trash / Soft Delete related
     Route::get('/users/trash', [UserController::class, 'trashList'])->name('users.trash.list');
     Route::delete('/users/{id}/trash', [UserController::class, 'trash'])->name('users.trash');
-    Route::put('/users/{id}/restore', [UserController::class, 'restore'])->name('users.restore');
+    Route::get('/users/{id}/restore', [UserController::class, 'restore'])->name('users.restore');
     Route::delete('/users/{id}/delete', [UserController::class, 'forceDelete'])->name('users.forceDelete');
 
     Route::get('permissions', [PermissionController::class, 'index'])->name('permissions.index');
@@ -45,7 +46,7 @@ Route::middleware(['auth'])->group(function () {
     // Trash-related
     Route::get('permissions-trash', [PermissionController::class, 'trashList'])->name('permissions.trash.list');
     Route::delete('permissions/{id}/trash', [PermissionController::class, 'trash'])->name('permissions.trash');
-    Route::post('permissions/{id}/restore', [PermissionController::class, 'restore'])->name('permissions.restore');
+    Route::get('permissions/{id}/restore', [PermissionController::class, 'restore'])->name('permissions.restore');
     Route::delete('permissions/{id}/force-delete', [PermissionController::class, 'forceDelete'])->name('permissions.forceDelete');
 
     Route::get('roles', [RoleController::class, 'index'])->name('roles.index');
@@ -58,7 +59,7 @@ Route::middleware(['auth'])->group(function () {
     // Trash features
     Route::get('roles-trash', [RoleController::class, 'trashList'])->name('roles.trash.list');
     Route::delete('roles/{id}/trash', [RoleController::class, 'trash'])->name('roles.trash');
-    Route::post('roles/{id}/restore', [RoleController::class, 'restore'])->name('roles.restore');
+    Route::get('roles/{id}/restore', [RoleController::class, 'restore'])->name('roles.restore');
     Route::delete('roles/{id}/force-delete', [RoleController::class, 'forceDelete'])->name('roles.forceDelete');
 
     Route::get('/impersonate/{id}', function ($id) {
@@ -82,6 +83,11 @@ Route::middleware('auth')->group(function () {
   Route::get('/dashboard', function(){
         return view('dashboard'); // siswa
     });
+
+    Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+    Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+    Route::put('/siswa/{id}', [SiswaController::class, 'update'])->name('siswa.update');
+    Route::delete('/siswa/{id}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
 });
 
 // Halaman utama daftar pelajaran

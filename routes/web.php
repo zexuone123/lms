@@ -9,10 +9,6 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::view('/', 'home');
 Route::view('/dashboard', 'dashboard');
 Route::view('/courses/{id}', 'course-detail');
@@ -81,7 +77,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware('auth')->group(function () {
   Route::get('/dashboard', function(){
-        return view('dashboard'); // siswa
+        return view('dashboard');
     });
 
     Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');

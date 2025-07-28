@@ -30,10 +30,11 @@ class SuperAdminSeeder extends Seeder
         }
 
         $user = User::firstOrCreate(
-            ['email' => 'akmalrahmattullahn@gmail.com'],
+            ['email' => 'SuperAdmin@example.com'],
             [
-                'name' => 'super_admin',
-                'password' => bcrypt('password!@#$%^&*()_+'),
+                'name' => 'Super Admin',
+                'username' => 'super_admin',
+                'password' => bcrypt('password'),
             ]
         );
 

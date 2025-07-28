@@ -13,12 +13,12 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="mb-3">
-                <label for="email" class="form-label fw-bold">Email</label>
-                <input type="email" class="form-control rounded-pill" id="email" name="email" required autofocus>
+                <label for="username" class="form-label fw-bold">Username</label>
+                <input type="text" class="form-control rounded-pill" id="username" name="username" required autofocus autocomplete="new-username">
             </div>
             <div class="mb-4">
                 <label for="password" class="form-label fw-bold">Password</label>
-                <input type="password" class="form-control rounded-pill" id="password" name="password" required>
+                <input type="password" class="form-control rounded-pill" id="password" name="password" required autocomplete="new-password">
             </div>
             <button type="submit" class="btn btn-warning w-100 btn-fun">
                 <i class="bi bi-door-open-fill me-1"></i> Login

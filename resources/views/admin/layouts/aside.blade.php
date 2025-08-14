@@ -2,7 +2,7 @@
     <!--begin::Sidebar Brand-->
     <div class="sidebar-brand">
         <!--begin::Brand Link-->
-        <a href="{{ route('dashboard') }}" class="brand-link">
+        <a href="{{ route('dashboard.admin') }}" class="brand-link">
             <!--begin::Brand Image-->
             <img src="{{ asset('dashboard/assets/img/AdminLTELogo.png') }}" alt="Admin Lte"
                 class="brand-image opacity-75 shadow" />
@@ -20,8 +20,8 @@
             <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="{{ route('dashboard') }}"
-                        class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.admin') }}"
+                        class="nav-link {{ request()->routeIs('dashboard.admin') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>Dashboard</p>
                     </a>
@@ -50,6 +50,35 @@
                             <i class="bi bi-laptop"></i>
                             <p>Siswa</p>
                         </a>
+                    </li>
+                @endCan
+
+                @Can('quiz')
+                    <li class="nav-item {{ request()->routeIs('category-quiz.index', 'quiz.index', 'quiz.create', 'quiz.edit') ? 'menu-open' : '' }}">
+                        <a href="#"
+                            class="nav-link {{ request()->routeIs('category-quiz.index', 'quiz.index', 'quiz.create', 'quiz.edit') ? 'active' : '' }}">
+                            <i class="nav-icon bi bi-people"></i>
+                            <p>
+                                Quiz
+                                <i class="nav-arrow bi bi-chevron-right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('category-quiz.index') }}"
+                                    class="nav-link {{ request()->routeIs('category-quiz.index') ? 'active' : '' }}">
+                                    <i class="nav-icon bi bi-circle"></i>
+                                    <p>Category</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('quiz.index') }}"
+                                    class="nav-link {{ request()->routeIs('quiz.index', 'quiz.create', 'quiz.edit') ? 'active' : '' }}">
+                                    <i class="nav-icon bi bi-circle"></i>
+                                    <p>Quiz</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 @endCan
 

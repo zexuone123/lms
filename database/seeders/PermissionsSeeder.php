@@ -19,6 +19,14 @@ class PermissionsSeeder extends Seeder
             'siswa create',
             'siswa edit',
             'siswa delete',
+            'category-quiz',
+            'category-quiz create',
+            'category-quiz edit',
+            'category-quiz delete',
+            'quiz',
+            'quiz create',
+            'quiz edit',
+            'quiz delete',
             'impersonate',
         ];
 

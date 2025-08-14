@@ -19,7 +19,8 @@ class SiswaController extends Controller
                         ->orWhere('username', 'like', '%' . $search . '%');
                 });
             })
-            ->get();
+            ->paginate(10)
+            ->appends($request->only('search'));
 
         return view('admin.pages.database.siswa.index', compact('siswas'));
     }
@@ -29,7 +30,7 @@ class SiswaController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'username' => 'required|unique:siswa',
-            'class' => 'required',  
+            'class' => 'required',
             'password' => 'required|min:6',
         ]);
 

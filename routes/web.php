@@ -3,24 +3,28 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Database\CategoryQuizController;
+use App\Http\Controllers\Database\QuizController;
 use App\Http\Controllers\Database\SiswaController;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 
 Route::view('/', 'home');
 Route::view('/dashboard', 'dashboard');
 Route::view('/courses/{id}', 'course-detail');
-Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware('guest')->group(function() {
+Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard-admin', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard-admin', [DashboardController::class, 'index'])->name('dashboard.admin');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
@@ -73,22 +77,32 @@ Route::middleware(['auth'])->group(function () {
         auth()->user()->leaveImpersonation();
         return redirect('/dashboard-admin');
     })->name('impersonate.leave');
-});
-
-Route::middleware('auth')->group(function () {
-  Route::get('/dashboard', function(){
-        return view('dashboard');
-    });
 
     Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
     Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
     Route::put('/siswa/{id}', [SiswaController::class, 'update'])->name('siswa.update');
     Route::delete('/siswa/{id}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+    Route::get('/category-quiz', [CategoryQuizController::class, 'index'])->name('category-quiz.index');
+    Route::post('/category-quiz', [CategoryQuizController::class, 'store'])->name('category-quiz.store');
+    Route::put('/category-quiz/{id}', [CategoryQuizController::class, 'update'])->name('category-quiz.update');
+    Route::delete('/category-quiz/{id}', [CategoryQuizController::class, 'destroy'])->name('category-quiz.destroy');
+
+    Route::get('/quiz', [QuizController::class, 'index'])->name('quiz.index');
+    Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
+    Route::get('/quiz/{id}/edit', [QuizController::class, 'edit'])->name('quiz.edit');
+    Route::post('/quiz', [QuizController::class, 'store'])->name('quiz.store');
+    Route::put('/quiz/{id}', [QuizController::class, 'update'])->name('quiz.update');
+    Route::delete('/quiz/{id}', [QuizController::class, 'destroy'])->name('quiz.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+   Route::get('/dashboard', [FrontendController::class, 'index'])->name('dashboard');
 });
 
 // Halaman utama daftar pelajaran
 Route::get('/belajar-anak', function () {
-    return view('belajar-anak'); 
+    return view('belajar-anak');
 });
 
 // Group untuk semua mata pelajaran TK & SD
@@ -118,3 +132,6 @@ Route::prefix('belajar-anak')->group(function () {
         return view('belajar-anak.jati-diri');
     });
 });
+
+Route::get('/test', [TestController::class, 'index'])->name('test.index');
+Route::get('/quiz/{id}', [TestController::class, 'show'])->name('quiz.show');

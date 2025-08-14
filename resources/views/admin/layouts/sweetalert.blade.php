@@ -113,8 +113,8 @@
 <script>
     function confirmDelete(id) {
         Swal.fire({
-            title: 'Yakin ingin menghapus?',
-            text: "Data siswa akan dihapus permanen!",
+            title: 'Hapus ID: ' + id + '?',
+            text: '',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
@@ -147,21 +147,4 @@
             }
         });
     });
-</script>
-<script>
-    function konfirmasiBayar(tenantId, bulan) {
-        Swal.fire({
-            title: 'Yakin ingin menandai sebagai sudah bayar?',
-            text: "Data akan disimpan ke sistem!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#198754',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ya, Tandai Bayar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                document.getElementById(`form-bayar-${tenantId}-${bulan}`).submit();
-            }
-        });
-    }
 </script>

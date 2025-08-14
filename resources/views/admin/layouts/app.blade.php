@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="AdminLTE v4 | admin" />
     <meta name="author" content="ColorlibHQ" />
-    <meta name="description"
-        content="AdminLTE is a Free Bootstrap 5 Admin admin, 30 example pages using Vanilla JS." />
+    <meta name="description" content="AdminLTE is a Free Bootstrap 5 Admin admin, 30 example pages using Vanilla JS." />
     <meta name="keywords"
         content="bootstrap 5, bootstrap, bootstrap 5 admin admin, bootstrap 5 admin, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq admin, colorlibhq admin admin" />
     <!--end::Primary Meta Tags-->
@@ -36,6 +35,7 @@
     <!-- jsvectormap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
         integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -182,6 +182,7 @@
         integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"
         integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY=" crossorigin="anonymous"></script>
+
     <!-- jsvectormap -->
     <script>
         // World map by jsVectorMap

@@ -53,9 +53,48 @@
                                             <td>{{ $role->name }}</td>
                                             <td>
                                                 <div class="d-flex gap-2">
-                                                   @if ($role->name == 'super_admin')
-                                                        <button class="btn btn-sm btn-danger" disabled>Super Admin</button>
+                                                    @if ($role->name == 'super_admin')
+                                                        @if (auth()->user()->hasRole('super_admin') && auth()->user()->id == $role->id)
+                                                            {{-- Super admin hanya bisa edit dirinya sendiri --}}
+                                                            <a href="{{ route('roles.edit', $role->id) }}"
+                                                                class="btn btn-sm btn-warning" title="Edit">
+                                                                <i class="bi bi-pencil-square"></i>
+                                                            </a>
+
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-sm btn-danger dropdown-toggle"
+                                                                    type="button" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <i class="bi bi-trash3"></i>
+                                                                </button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>
+                                                                        <button type="button"
+                                                                            class="dropdown-item text-warning btn-soft-delete"
+                                                                            data-id="{{ $role->id }}"
+                                                                            data-url="{{ route('roles.trash', $role->id) }}">
+                                                                            <i class="bi bi-archive"></i> Trash (Soft
+                                                                            Delete)
+                                                                        </button>
+                                                                    </li>
+                                                                    <li>
+                                                                        <button type="button"
+                                                                            class="dropdown-item text-danger btn-force-delete"
+                                                                            data-id="{{ $role->id }}"
+                                                                            data-url="{{ route('roles.forceDelete', $role->id) }}">
+                                                                            <i class="bi bi-x-circle"></i> Hapus
+                                                                            Permanen
+                                                                        </button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        @else
+                                                            {{-- Super admin tidak bisa diubah oleh orang lain --}}
+                                                            <button class="btn btn-sm btn-danger" disabled>Super
+                                                                Admin</button>
+                                                        @endif
                                                     @else
+                                                        {{-- Role lain bebas diedit --}}
                                                         <a href="{{ route('roles.edit', $role->id) }}"
                                                             class="btn btn-sm btn-warning" title="Edit">
                                                             <i class="bi bi-pencil-square"></i>
@@ -73,7 +112,8 @@
                                                                         class="dropdown-item text-warning btn-soft-delete"
                                                                         data-id="{{ $role->id }}"
                                                                         data-url="{{ route('roles.trash', $role->id) }}">
-                                                                        <i class="bi bi-archive"></i> Trash (Soft Delete)
+                                                                        <i class="bi bi-archive"></i> Trash (Soft
+                                                                        Delete)
                                                                     </button>
                                                                 </li>
                                                                 <li>

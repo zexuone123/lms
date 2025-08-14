@@ -122,3 +122,14 @@ Route::prefix('belajar-anak')->group(function () {
         return view('belajar-anak.jati-diri');
     });
 });
+
+//materi//
+// Perkalian
+Route::view('/materi/matematika/perkalian', 'belajar-anak.materi.matematika.index')->name('materi.index');
+
+// Pecahan
+Route::view('/materi/matematika/pecahan', 'belajar-anak.materi.matematika.pecahan.index')->name('materi.pecahan.index');
+
+// Operasi Angka
+Route::view('/materi/matematika/operasi-angka', 'belajar-anak.materi.matematika.operasi-angka.index')->name('materi.operasi-angka.index');
+

@@ -78,7 +78,7 @@
     </div>
 
     <div class="text-center mt-4">
-        <a href="/materi/matematika" class="btn btn-outline-secondary">
+        <a href="/belajar-anak/matematika" class="btn btn-outline-secondary">
             <i class="bi bi-arrow-left"></i> Kembali ke Pilihan Materi
         </a>
     </div>

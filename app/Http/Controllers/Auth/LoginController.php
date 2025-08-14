@@ -33,7 +33,7 @@ class LoginController extends Controller
 
         if (Auth::guard('siswa')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/'); 
+            return redirect()->route('dashboard.siswa'); 
         }
 
         return back()->withErrors([

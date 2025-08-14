@@ -96,40 +96,27 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/quiz/{id}', [QuizController::class, 'destroy'])->name('quiz.destroy');
 });
 
-Route::middleware('auth')->group(function () {
-   Route::get('/dashboard', [FrontendController::class, 'index'])->name('dashboard');
+
+Route::middleware(['auth:siswa'])->group(function () {
+    // Dashboard utama
+    Route::get('/dashboard', [FrontendController::class, 'index'])
+        ->name('dashboard.siswa');
 });
 
 // Halaman utama daftar pelajaran
-Route::get('/belajar-anak', function () {
-    return view('belajar-anak');
-});
+Route::get('/belajar-anak', [FrontendController::class, 'belajarAnak'])->name('belajar-anak');
 
-// Group untuk semua mata pelajaran TK & SD
-Route::prefix('belajar-anak')->group(function () {
-    Route::get('/matematika', function () {
-        return view('belajar-anak.matematika');
-    });
-    Route::get('/bahasa-indonesia', function () {
-        return view('belajar-anak.bahasa');
-    });
-    Route::get('/sains', function () {
-        return view('belajar-anak.sains');
-    });
-    Route::get('/agama', function () {
-        return view('belajar-anak.agama');
-    });
-    Route::get('/literasi', function () {
-        return view('belajar-anak.literasi');
-    });
-    Route::get('/numerasi', function () {
-        return view('belajar-anak.numerasi');
-    });
-    Route::get('/seni', function () {
-        return view('belajar-anak.seni');
-    });
-    Route::get('/jati-diri', function () {
-        return view('belajar-anak.jati-diri');
+Route::middleware('auth')->prefix('dashboard')->group(function () {
+    // Group untuk semua mata pelajaran TK & SD
+    Route::prefix('belajar-anak')->group(function () {
+        Route::get('/matematika', [FrontendController::class, 'matematika'])->name('belajar-anak.matematika');
+        Route::get('/bahasa-indonesia', [FrontendController::class, 'bahasa'])->name('belajar-anak.bahasa');
+        Route::get('/sains', [FrontendController::class, 'sains'])->name('belajar-anak.sains');
+        Route::get('/agama', [FrontendController::class, 'agama'])->name('belajar-anak.agama');
+        Route::get('/literasi', [FrontendController::class, 'literasi'])->name('belajar-anak.literasi');
+        Route::get('/numerasi', [FrontendController::class, 'numerasi'])->name('belajar-anak.numerasi');
+        Route::get('/seni', [FrontendController::class, 'seni'])->name('belajar-anak.seni');
+        Route::get('/jati-diri', [FrontendController::class, 'jatiDiri'])->name('belajar-anak.jati-diri');
     });
 });
 

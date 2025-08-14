@@ -50,7 +50,7 @@
                 <div class="card-body text-center">
                     <h4 class="fw-bold text-success">📐 Matematika Dasar</h4>
                     <p class="text-muted">Belajar angka, penjumlahan, dan pengurangan dengan cara seru.</p>
-                    <a href="/belajar-anak/matematika" class="btn btn-success btn-fun">Mulai</a>
+                    <a href="{{ route('belajar-anak.matematika') }}" class="btn btn-success btn-fun">Mulai</a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <div class="card-body text-center">
                     <h4 class="fw-bold text-primary">📖 Bahasa Indonesia</h4>
                     <p class="text-muted">Belajar membaca dan menulis dengan cerita menyenangkan.</p>
-                    <a href="/belajar-anak/bahasa-indonesia" class="btn btn-primary btn-fun">Mulai</a>
+                    <a href="{{ route('belajar-anak.bahasa') }}" class="btn btn-primary btn-fun">Mulai</a>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
                 <div class="card-body text-center">
                     <h4 class="fw-bold text-warning">🔬 Sains</h4>
                     <p class="text-muted">Kenali dunia alam dan eksperimen sederhana.</p>
-                    <a href="/belajar-anak/sains" class="btn btn-warning btn-fun">Mulai</a>
+                    <a href="{{ route('belajar-anak.sains') }}" class="btn btn-warning btn-fun">Mulai</a>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                 <div class="card-body text-center">
                     <h4 class="fw-bold text-success">🙏 Agama & Budi Pekerti</h4>
                     <p class="text-muted">Belajar kebaikan, sopan santun, dan nilai moral.</p>
-                    <a href="/belajar-anak/agama" class="btn btn-success btn-fun">Mulai</a>
+                    <a href="{{ route('belajar-anak.agama') }}" class="btn btn-success btn-fun">Mulai</a>
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
                 <div class="card-body text-center">
                     <h4 class="fw-bold text-primary">📚 Literasi</h4>
                     <p class="text-muted">Meningkatkan kemampuan membaca dan memahami bacaan.</p>
-                    <a href="/belajar-anak/literasi" class="btn btn-primary btn-fun">Mulai</a>
+                    <a href="{{ route('belajar-anak.literasi') }}" class="btn btn-primary btn-fun">Mulai</a>
                 </div>
             </div>
         </div>
@@ -110,7 +110,7 @@
                 <div class="card-body text-center">
                     <h4 class="fw-bold text-warning">🔢 Numerasi</h4>
                     <p class="text-muted">Memahami konsep bilangan dan pola matematika sederhana.</p>
-                    <a href="/belajar-anak/numerasi" class="btn btn-warning btn-fun">Mulai</a>
+                    <a href="{{ route('belajar-anak.numerasi') }}" class="btn btn-warning btn-fun">Mulai</a>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
                 <div class="card-body text-center">
                     <h4 class="fw-bold text-danger">🎨 Seni</h4>
                     <p class="text-muted">Belajar menggambar, mewarnai, dan membuat kerajinan tangan.</p>
-                    <a href="/belajar-anak/seni" class="btn btn-danger btn-fun">Mulai</a>
+                    <a href="{{ route('belajar-anak.seni') }}" class="btn btn-danger btn-fun">Mulai</a>
                 </div>
             </div>
         </div>
@@ -134,14 +134,14 @@
                 <div class="card-body text-center">
                     <h4 class="fw-bold text-info">🧑‍🤝‍🧑 Jati Diri</h4>
                     <p class="text-muted">Mengenal potensi diri dan sikap percaya diri.</p>
-                    <a href="/belajar-anak/jati-diri" class="btn btn-info btn-fun">Mulai</a>
+                    <a href="{{ route('belajar-anak.jati-diri') }}" class="btn btn-info btn-fun">Mulai</a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="text-center mt-5 animate__animated animate__fadeInUp">
-        <a href="/" class="btn btn-lg btn-danger btn-fun">
+        <a href="/dashboard" class="btn btn-lg btn-danger btn-fun">
             <i class="bi bi-arrow-left"></i> Kembali ke Halaman Utama
         </a>
     </div>

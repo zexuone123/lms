@@ -3,30 +3,55 @@
 @section('content')
 <div class="container py-5">
     <h2 class="fw-bold text-success mb-4 animate__animated animate__fadeInDown">📐 Belajar Matematika Dasar</h2>
+    <p class="text-muted mb-5">Pilih materi yang ingin kamu pelajari!</p>
 
-    <!-- Video Pembelajaran -->
-    <div class="mb-4 text-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/tb1p0no_1Cg"
-            title="Video Matematika" frameborder="0" allowfullscreen
-            class="shadow-lg rounded animate__animated animate__zoomIn"></iframe>
-    </div>
+    <div class="row g-4">
+        <!-- Perkalian -->
+        <div class="col-md-4 col-12">
+            <div class="card text-center shadow-lg p-4 lesson-card animate__animated animate__zoomIn">
+                <i class="bi bi-x-lg display-4 text-primary mb-3"></i>
+                <h5 class="fw-bold">Perkalian</h5>
+                <p class="small text-muted">Pelajari konsep perkalian dari dasar hingga mahir.</p>
+                <a href="{{ route('materi.perkalian.index') }}" class="btn btn-primary btn-sm mt-2">Pilih</a>
+            </div>
+        </div>
 
-    <!-- Materi Singkat -->
-    <div class="card p-4 shadow-sm mb-4 animate__animated animate__fadeInUp">
-        <h5 class="fw-bold">Materi Hari Ini</h5>
-        <p>Hari ini kita akan belajar tentang penjumlahan dan pengurangan sederhana.</p>
-    </div>
+        <!-- Pecahan -->
+        <div class="col-md-4 col-12">
+            <div class="card text-center shadow-lg p-4 lesson-card animate__animated animate__zoomIn animate__delay-1s">
+                <i class="bi bi-slash-lg display-4 text-success mb-3"></i>
+                <h5 class="fw-bold">Pecahan</h5>
+                <p class="small text-muted">Belajar penjumlahan, pengurangan, dan perkalian pecahan.</p>
+                <a href="{{ route('materi.pecahan.index') }}" class="btn btn-success btn-sm mt-2">Pilih</a>
+            </div>
+        </div>
 
-    <!-- Kuis Interaktif -->
-    <div class="card p-4 shadow-sm animate__animated animate__fadeInUp">
-        <h5 class="fw-bold mb-3">Kuis Cepat</h5>
-        <p>Berapakah hasil 5 + 3?</p>
-        <button class="btn btn-outline-success btn-fun me-2" onclick="alert('Benar! 🎉')">8</button>
-        <button class="btn btn-outline-danger btn-fun" onclick="alert('Ups, coba lagi!')">7</button>
+        <!-- Operasi Angka -->
+        <div class="col-md-4 col-12">
+            <div class="card text-center shadow-lg p-4 lesson-card animate__animated animate__zoomIn animate__delay-2s">
+                <i class="bi bi-plus-slash-minus display-4 text-warning mb-3"></i>
+                <h5 class="fw-bold">Operasi Angka</h5>
+                <p class="small text-muted">Pelajari penjumlahan, pengurangan, perkalian, dan pembagian.</p>
+                <a href="{{ route('materi.operasi-angka.index') }}" class="btn btn-warning btn-sm mt-2">Pilih</a>
+            </div>
+        </div>
     </div>
 
     <div class="text-center mt-5">
-        <a href="/belajar-anak" class="btn btn-danger btn-fun"><i class="bi bi-arrow-left"></i> Kembali</a>
+        <a href="/belajar-anak" class="btn btn-danger btn-fun">
+            <i class="bi bi-arrow-left"></i> Kembali
+        </a>
     </div>
 </div>
+
+<style>
+.lesson-card {
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+</style>
 @endsection

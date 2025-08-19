@@ -120,5 +120,45 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     });
 });
 
+
 Route::get('/test', [TestController::class, 'index'])->name('test.index');
 Route::get('/quiz/{id}', [TestController::class, 'show'])->name('quiz.show');
+
+// Group untuk semua mata pelajaran TK & SD
+Route::prefix('belajar-anak')->group(function () {
+    Route::get('/matematika', function () {
+        return view('belajar-anak.matematika');
+    });
+    Route::get('/bahasa-indonesia', function () {
+        return view('belajar-anak.bahasa');
+    });
+    Route::get('/sains', function () {
+        return view('belajar-anak.sains');
+    });
+    Route::get('/agama', function () {
+        return view('belajar-anak.agama');
+    });
+    Route::get('/literasi', function () {
+        return view('belajar-anak.literasi');
+    });
+    Route::get('/numerasi', function () {
+        return view('belajar-anak.numerasi');
+    });
+    Route::get('/seni', function () {
+        return view('belajar-anak.seni');
+    });
+    Route::get('/jati-diri', function () {
+        return view('belajar-anak.jati-diri');
+    });
+});
+
+//materi//
+// Perkalian
+Route::view('/materi/matematika/perkalian', 'belajar-anak.materi.matematika.index')->name('materi.index');
+
+// Pecahan
+Route::view('/materi/matematika/pecahan', 'belajar-anak.materi.matematika.pecahan.index')->name('materi.pecahan.index');
+
+// Operasi Angka
+Route::view('/materi/matematika/operasi-angka', 'belajar-anak.materi.matematika.operasi-angka.index')->name('materi.operasi-angka.index');
+

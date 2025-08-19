@@ -99,7 +99,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth:siswa'])->group(function () {
     // Dashboard utama
-    Route::get('/dashboard', [FrontendController::class, 'index'])
+    Route::get('/dashboard-siswa', [FrontendController::class, 'index'])
         ->name('dashboard.siswa');
 });
 

@@ -54,7 +54,7 @@
 
     <!-- Daftar Pelajaran -->
     <div class="row g-4">
-<<<<<<< HEAD
+
         <!-- Matematika -->
         <div class="col-md-4">
             <div class="card shadow-lg lesson-card animate__animated animate__zoomIn">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-=======
+
         @php
             $lessons = [
                 ['title' => '📐 Matematika Dasar', 'desc' => 'Belajar angka, penjumlahan, dan pengurangan dengan cara seru.', 'color' => 'success', 'img' => '📐+Matematika', 'link' => 'matematika'],
@@ -78,14 +78,13 @@
                 ['title' => '🎨 Seni', 'desc' => 'Belajar menggambar, mewarnai, dan membuat kerajinan tangan.', 'color' => 'danger', 'img' => '🎨+Seni', 'link' => 'seni'],
             ];
         @endphp
->>>>>>> origin/main
 
         @foreach($lessons as $index => $lesson)
         <div class="col-md-4">
             <div class="card shadow-lg lesson-card animate__animated animate__zoomIn {{ $index % 3 == 1 ? 'animate__delay-1s' : ($index % 3 == 2 ? 'animate__delay-2s' : '') }}">
                 <img src="https://placehold.co/400x200?text={{ $lesson['img'] }}" class="card-img-top lesson-img" alt="{{ $lesson['title'] }}">
                 <div class="card-body text-center">
-<<<<<<< HEAD
+
                     <h4 class="fw-bold text-primary">📖 Bahasa Indonesia</h4>
                     <p class="text-muted">Belajar membaca dan menulis dengan cerita menyenangkan.</p>
                     <a href="{{ route('belajar-anak.bahasa') }}" class="btn btn-primary btn-fun">Mulai</a>
@@ -161,11 +160,11 @@
                     <h4 class="fw-bold text-info">🧑‍🤝‍🧑 Jati Diri</h4>
                     <p class="text-muted">Mengenal potensi diri dan sikap percaya diri.</p>
                     <a href="{{ route('belajar-anak.jati-diri') }}" class="btn btn-info btn-fun">Mulai</a>
-=======
+
                     <h4 class="fw-bold text-{{ $lesson['color'] }}">{{ $lesson['title'] }}</h4>
                     <p class="text-muted small">{{ $lesson['desc'] }}</p>
                     <a href="/belajar-anak/{{ $lesson['link'] }}" class="btn btn-{{ $lesson['color'] }}">Mulai</a>
->>>>>>> origin/main
+
                 </div>
             </div>
         </div>
@@ -174,11 +173,11 @@
 
     <!-- Tombol Kembali -->
     <div class="text-center mt-5 animate__animated animate__fadeInUp">
-<<<<<<< HEAD
+
         <a href="/dashboard" class="btn btn-lg btn-danger btn-fun">
-=======
+
         <a href="/" class="btn btn-lg btn-danger">
->>>>>>> origin/main
+
             <i class="bi bi-arrow-left"></i> Kembali ke Halaman Utama
         </a>
     </div>
